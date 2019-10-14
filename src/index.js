@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { StatusBar } from 'react-native';
+import Routes from './routes';
 
-// import { Container } from './styles';
-
-export default function src() {
+export default function App() {
   return (
-    <View>
-      <Text>Lucas</Text>
-    </View>
+    <>
+      <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
+      <Routes />
+    </>
   );
 }
