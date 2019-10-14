@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Image } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -16,6 +16,10 @@ import {
 } from './styles';
 
 export default function SingIn({ navigation }) {
+  const passwordRef = useRef();
+
+  function handleSubmit() {}
+
   return (
     <Background>
       <Container>
@@ -28,12 +32,17 @@ export default function SingIn({ navigation }) {
             autoCorrect={false}
             autoCapitalize="none"
             placeholder="Type your e-mail"
+            returnKeyType="next"
+            onSubmitEditing={() => passwordRef.current.focus()}
           />
 
           <FormInput
             icon="lock-outline"
             secureTextEntry
             placeholder="Your secret password"
+            returnKeyType="send"
+            ref={passwordRef}
+            onSubmitEditing={handleSubmit}
           />
 
           <SubmitButton on={() => {}}>Access</SubmitButton>
