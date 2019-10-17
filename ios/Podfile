@@ -36,6 +36,10 @@ target 'mobileGobarber' do
 
 
 
+
+
+
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'mobileGobarberTests' do
