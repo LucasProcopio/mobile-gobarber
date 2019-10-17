@@ -16,6 +16,7 @@ yarn
 ```
 
 ## Usage
+
 > Note: before starting make sure you have the [backend-gobarber](https://github.com/LucasProcopio/backend-gobarber) server running correctly on your machine, then run the command below.
 
 ```sh
