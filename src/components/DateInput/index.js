@@ -1,20 +1,21 @@
 import React, { useMemo, useState } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { format, setDate } from 'date-fns';
+import { format } from 'date-fns';
 
 import { Container, DateButton, DateText } from './styles';
 
 export default function DateInput({ date, onChange }) {
   const [opened, setOpen] = useState(false);
-  const dateFormatted = useMemo(() => format(date, 'MMMM Do, yyyy'), [date]);
+  const dateFormatted = useMemo(() => format(date, 'MMMM do, yyyy'), [date]);
 
-  function log(event, date) {
-    if (date) {
+  function handleChange(event, date) {
+    setOpen(false);
+    if (date !== undefined) {
       onChange(date);
     }
-    setOpen(false);
   }
+
   return (
     <Container>
       <DateButton onPress={() => setOpen(!opened)}>
@@ -28,7 +29,7 @@ export default function DateInput({ date, onChange }) {
           mode="date"
           is24Hour
           display="default"
-          onChange={log}
+          onChange={handleChange}
           minimumDate={new Date()}
         />
       )}
